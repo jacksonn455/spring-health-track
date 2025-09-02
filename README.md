@@ -1,6 +1,6 @@
 # Spring Boot: Doctors System API
 
-RESTful API developed in Java 17 with Spring Boot 3, focused on managing doctors, their specialties, and addresses. The project was inspired by Spring Boot courses and best practices for REST APIs, including authentication, validations, and the use of JPA/Hibernate for data persistence.
+RESTful API developed in Java 17 with Spring Boot 3, focused on managing doctors, their specialties, and addresses. The project was inspired by Spring Boot and best practices for REST APIs, including authentication, validations, and the use of JPA/Hibernate for data persistence.
 
 ## 📌 Features
 
@@ -24,26 +24,6 @@ RESTful API developed in Java 17 with Spring Boot 3, focused on managing doctors
 * Flyway (for migrations)
 * Spring Security (for authentication and access control)
 * JWT (Json Web Token)
-
-## 🗂 Project Structure
-
-```
-com.springhealthtrack.api
- ├── dtos
- │    ├── DoctorRegistrationDTO.java
- │    └── AddressDTO.java
- ├── entities
- │    ├── Doctor.java
- ├── enums
- │    └── SpecialtyEnum.java
- ├── repositories
- │    └── DoctorRepository.java
- ├── services
- │    └── DoctorService.java
- ├── controllers
- │    └── DoctorController.java
- └── SpringHealthTrackApplication.java
-```
 
 ## 🚀 How to Run the Project
 
