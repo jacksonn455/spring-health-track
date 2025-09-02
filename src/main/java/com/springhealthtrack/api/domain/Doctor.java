@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.entities;
+package com.springhealthtrack.api.domain;
 
 import com.springhealthtrack.api.dtos.AddressDTO;
 import com.springhealthtrack.api.dtos.DoctorRegistrationDTO;

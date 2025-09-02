@@ -4,10 +4,9 @@ import com.springhealthtrack.api.dtos.DataUpdatedDoctorDTO;
 import com.springhealthtrack.api.dtos.DoctorRegistrationDTO;
 import com.springhealthtrack.api.dtos.DoctorUpdateDTO;
 import com.springhealthtrack.api.dtos.ListDoctorDTO;
-import com.springhealthtrack.api.entities.Doctor;
+import com.springhealthtrack.api.domain.Doctor;
 import com.springhealthtrack.api.repositories.DoctorRepository;
 import jakarta.validation.Valid;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -42,6 +41,13 @@ public class DoctorController {
         return ResponseEntity.ok(page);
     }
 
+    @GetMapping("/{id}")
+    @Transactional
+    public ResponseEntity getDoctorById(@PathVariable("id") Long id) {
+        Doctor doctor = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DataUpdatedDoctorDTO(doctor));
+    }
+
     @PutMapping
     @Transactional
     public ResponseEntity updateDoctor(@RequestBody @Valid DoctorUpdateDTO data) {
@@ -53,7 +59,7 @@ public class DoctorController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> deleteDoctor(@PathVariable("id") Long id) {
+    public ResponseEntity deleteDoctor(@PathVariable("id") Long id) {
         if (id == null) {
             return ResponseEntity.badRequest().build();
         }
