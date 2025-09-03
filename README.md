@@ -1,6 +1,6 @@
 # Spring Boot: Doctors System API
 
-RESTful API developed in Java 17 with Spring Boot 3, focused on managing doctors, their specialties, and addresses. The project was inspired by Spring Boot and best practices for REST APIs, including authentication, validations, and the use of JPA/Hibernate for data persistence.
+To create a RESTful API in Java 17 with Spring Boot 3 for managing doctors, patients, and appointments, inspired by Spring Boot best practices, I'll outline a structured approach. The API will include authentication, validations, and JPA/Hibernate for data persistence. Below is a comprehensive guide to set up the project, including key components, code examples, and best practices.
 
 ## 📌 Features
 
