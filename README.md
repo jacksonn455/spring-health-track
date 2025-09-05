@@ -28,6 +28,14 @@ This API was built with a focus on clean architecture and modern software develo
     *   Support for both **MySQL** and **PostgreSQL** databases.
     *   Automated database schema migration management with **Flyway**.
 
+  *   **Cache Management (Redis):**
+  * Integration with Redis to cache frequently accessed data and reduce database load.
+  * Cached data (like Doctors and Patients) has a TTL of 30 seconds, after which fresh data is fetched from the database.
+
+*   **Application Monitoring (New Relic):**
+  * Monitors application performance, request throughput, response times, and errors.
+  * Provides alerts and dashboards to track database queries and overall system health.
+
 *   **Documentation & Testing:**
     *   API documentation designed to follow the **OpenAPI** standard (ready for Swagger UI integration).
     *   A structured project setup that is ready for **automated tests** (unit, integration) within the Spring ecosystem.
@@ -46,6 +54,8 @@ This API was built with a focus on clean architecture and modern software develo
 *   **Utilities:** Lombok
 *   **Logging:** SLF4J
 *   **Messaging/Queue:** Apache Kafka
+*   **Caching:** Redis
+*   **Monitoring:** New Relic
 
 ## How to Run the Project
 
@@ -59,26 +69,7 @@ This API was built with a focus on clean architecture and modern software develo
     cd springhealthtrack
     ```
 
-3.  **Configure your database** in `src/main/resources/application.properties`:
-    ```properties
-    # Database Configuration (MySQL Example )
-    spring.datasource.url=jdbc:mysql://localhost:3306/spring_health_track
-    spring.datasource.username=root
-    spring.datasource.password=admin
-    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-
-    # JPA/Hibernate Settings
-    spring.jpa.show-sql=true
-    spring.jpa.properties.hibernate.format_sql=true
-
-    # Server Configuration
-    server.error.include-stacktrace=never
-
-    # JWT Secret (use an environment variable in production)
-    api.security.token.secret=${JWT_SECRET:12345678}
-    ```
-
-4.  **Run the application:**
+3**Run the application:**
     ```bash
     mvn spring-boot:run
     ```
@@ -121,14 +112,14 @@ The API will be available at `http://localhost:8080`.
     │   ├── java
     │   │   └── com.springhealthtrack.api
     │   │       ├── controllers
+    │   │       ├── core       
+    │   │       ├── documentations
     │   │       ├── domains
     │   │       ├── dtos
     │   │       ├── enums
-    │   │       ├── exceptions
+    │   │       ├── infraestructure
     │   │       ├── repositories
-    │   │       ├── security
     │   │       ├── services
-    │   │       ├── validations
     │   │       └── SpringHealthTrackApiApplication
     ├── resources
     │   ├── db.migration
@@ -136,7 +127,6 @@ The API will be available at `http://localhost:8080`.
     │   ├── templates
     │   └── application.properties
     └── test
-    
 
 ## Author
 

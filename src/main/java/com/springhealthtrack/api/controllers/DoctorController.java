@@ -9,6 +9,7 @@ import com.springhealthtrack.api.repositories.DoctorRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/doctors")
@@ -38,9 +40,12 @@ public class DoctorController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ListDoctorDTO>> getDoctors(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
-        Page<ListDoctorDTO> page = repository.findAllByActiveTrue(pageable).map(ListDoctorDTO::new);
-        return ResponseEntity.ok(page);
+    @Cacheable(value = "doctorCache") // Nome do cache definido no RedisCacheManager
+    public List<ListDoctorDTO> getDoctors(@PageableDefault(size = 10, sort = {"name"}) Pageable pageable) {
+        System.out.println("Consultando banco de dados...");
+        return repository.findAllByActiveTrue(pageable)
+                .map(ListDoctorDTO::new)
+                .getContent();
     }
 
     @GetMapping("/{id}")
