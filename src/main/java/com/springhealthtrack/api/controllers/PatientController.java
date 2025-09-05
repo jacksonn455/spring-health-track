@@ -6,6 +6,7 @@ import com.springhealthtrack.api.dtos.PatientUpdateDTO;
 import com.springhealthtrack.api.dtos.ListPatientDTO;
 import com.springhealthtrack.api.dtos.DataUpdatedPatientDTO;
 import com.springhealthtrack.api.repositories.PatientRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,6 +21,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/patients")
+@SecurityRequirement(name = "bearer-key")
 public class PatientController {
 
     @Autowired
@@ -29,7 +31,7 @@ public class PatientController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid PatientRegistrationDTO patient, UriComponentsBuilder uriBuilder) {
         Patient info = new Patient(patient);
-        repository.save(info);
+        info = repository.save(info);
 
         URI uri = uriBuilder.path("/patients/{id}").buildAndExpand(info.getId()).toUri();
         return ResponseEntity.created(uri).body(new DataUpdatedPatientDTO(info));
