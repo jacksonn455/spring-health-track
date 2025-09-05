@@ -56,6 +56,9 @@ This API was built with a focus on clean architecture and modern software develo
 *   **Messaging/Queue:** Apache Kafka
 *   **Caching:** Redis
 *   **Monitoring:** New Relic
+*   **Documentation:** OpenAPI, Swagger UI
+*   **Testing:** JUnit, Mockito
+*   **Build & Deployment:** Maven, Docker - docker-compose / Container-ready, Environment Variables
 
 ## How to Run the Project
 
