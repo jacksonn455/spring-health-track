@@ -1,6 +1,6 @@
 package com.springhealthtrack.api.controllers;
 
-import com.springhealthtrack.api.domain.User;
+import com.springhealthtrack.api.domains.User;
 import com.springhealthtrack.api.dtos.DataAutenticationDTO;
 import com.springhealthtrack.api.dtos.DataAutenticationJwtDTO;
 import com.springhealthtrack.api.services.TokenService;

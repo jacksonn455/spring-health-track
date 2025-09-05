@@ -1,6 +1,6 @@
 package com.springhealthtrack.api.repositories;
 
-import com.springhealthtrack.api.domain.User;
+import com.springhealthtrack.api.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

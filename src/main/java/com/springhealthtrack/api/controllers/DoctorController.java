@@ -4,7 +4,7 @@ import com.springhealthtrack.api.dtos.DataUpdatedDoctorDTO;
 import com.springhealthtrack.api.dtos.DoctorRegistrationDTO;
 import com.springhealthtrack.api.dtos.DoctorUpdateDTO;
 import com.springhealthtrack.api.dtos.ListDoctorDTO;
-import com.springhealthtrack.api.domain.Doctor;
+import com.springhealthtrack.api.domains.Doctor;
 import com.springhealthtrack.api.repositories.DoctorRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

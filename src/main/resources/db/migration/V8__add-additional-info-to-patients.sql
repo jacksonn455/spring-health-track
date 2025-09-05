@@ -1,0 +1,1 @@
+ALTER TABLE patients ADD COLUMN additional_info VARCHAR(255);

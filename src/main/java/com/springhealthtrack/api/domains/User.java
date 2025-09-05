@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.domain;
+package com.springhealthtrack.api.domains;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

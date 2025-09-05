@@ -1,6 +1,6 @@
 package com.springhealthtrack.api.dtos;
 
-import com.springhealthtrack.api.domain.Doctor;
+import com.springhealthtrack.api.domains.Doctor;
 import com.springhealthtrack.api.enums.SpecialtyEnum;
 
 public record DataUpdatedDoctorDTO(

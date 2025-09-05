@@ -2,7 +2,7 @@
 
 A RESTful API developed in Java 17 with Spring Boot 3 for managing doctors, patients, and appointments. This project applies best practices for REST APIs, including JWT authentication, role-based authorization, data validation, and robust data persistence with JPA/Hibernate.
 
-## 🎯 Features (Implemented Objectives)
+## Features (Implemented Objectives)
 
 This API was built with a focus on clean architecture and modern software development practices, implementing the following key objectives:
 
@@ -34,7 +34,7 @@ This API was built with a focus on clean architecture and modern software develo
     *   Configuration to **build** the application into a runnable JAR for production.
     *   Use of **environment variables** for sensitive data (e.g., JWT secrets, database credentials), preparing the application for containerization and deployment.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 *   **Core:** Java 17, Spring Boot 3, Maven
 *   **Persistence:** Spring Data JPA, Hibernate, Flyway
@@ -43,7 +43,7 @@ This API was built with a focus on clean architecture and modern software develo
 *   **Validation:** Bean Validation (Jakarta Validation)
 *   **Utilities:** Lombok
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 1.  **Clone the repository:**
     ```bash
@@ -81,31 +81,63 @@ This API was built with a focus on clean architecture and modern software develo
 
 The API will be available at `http://localhost:8080`.
 
-## 🔗 Main Endpoints
+## Main Endpoints
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/login` | Authenticates a user and returns a JWT. |
-| | | |
-| `POST` | `/doctors` | Creates a new doctor. |
-| `GET` | `/doctors` | Lists all doctors with pagination. |
-| `GET` | `/doctors/{id}` | Finds a doctor by their ID. |
-| `PUT` | `/doctors/{id}` | Updates a doctor's information. |
-| `DELETE`| `/doctors/{id}` | Deactivates a doctor (logical deletion ). |
-| | | |
-| `POST` | `/patients` | Creates a new patient. |
-| `GET` | `/patients` | Lists all patients with pagination. |
-| `GET` | `/patients/{id}` | Finds a patient by their ID. |
-| `PUT` | `/patients/{id}` | Updates a patient's information. |
-| `DELETE`| `/patients/{id}` | Deactivates a patient (logical deletion). |
-| | | |
-| `POST` | `/appointments` | Schedules a new appointment. |
-| `GET` | `/appointments` | Lists all appointments. |
-| `DELETE`| `/appointments/{id}`| Cancels an appointment. |
+| Method | Endpoint         | Description                           |
+|--------|------------------|---------------------------------------|
+| `POST` | `/login`         | Authenticates a user and returns a JWT. |
+|        |                  |                                       |
+| `POST` | `/doctors`       | Creates a new doctor.                 |
+| `GET`  | `/doctors`       | Lists all doctors with pagination.    |
+| `GET`  | `/doctors/{id}`  | Finds a doctor by their ID.           |
+| `PUT`  | `/doctors/{id}`  | Updates a doctor's information.       |
+| `DELETE` | `/doctors/{id}` | Deactivates a doctor (logical deletion). |
+|        |                  |                                       |
+| `POST` | `/patients`      | Creates a new patient.                |
+| `GET`  | `/patients`      | Lists all patients with pagination.   |
+| `GET`  | `/patients/{id}` | Finds a patient by their ID.          |
+| `PUT`  | `/patients/{id}` | Updates a patient's information.      |
+| `DELETE` | `/patients/{id}` | Deactivates a patient (logical deletion). |
+|        |                  |                                       |
+| `POST` | `/appointments`  | Schedules a new appointment.          |
+| `GET`  | `/appointments`  | Lists all appointments.               |
+| `DELETE` | `/appointments/{id}` | Cancels an appointment.          |
+|        |                  |                                       |
+| `GET`  | `/v3/api-docs`   | Swagger API documentation.            |
+| `GET`  | `/v3/api-docs/**` | Additional Swagger API documentation paths. |
+| `GET`  | `/swagger-ui.html` | Swagger UI interface.              |
+| `GET`  | `/swagger-ui/**` | Additional Swagger UI resources.      |
+| `GET`  | `/swagger-resources/**` | Swagger resources.              |
+| `GET`  | `/webjars/**`    | WebJars resources for Swagger UI.     |
 
-## 👨‍💻 Author
+## Project Structure
+
+    src
+    ├── main
+    │   ├── java
+    │   │   └── com.springhealthtrack.api
+    │   │       ├── controllers
+    │   │       ├── domains
+    │   │       ├── dtos
+    │   │       ├── enums
+    │   │       ├── exceptions
+    │   │       ├── repositories
+    │   │       ├── security
+    │   │       ├── services
+    │   │       ├── validations
+    │   │       └── SpringHealthTrackApiApplication
+    ├── resources
+    │   ├── db.migration
+    │   ├── static
+    │   ├── templates
+    │   └── application.properties
+    └── test
+    
+
+## Author
 
 <img src="https://avatars1.githubusercontent.com/u/46221221?s=460&u=0d161e390cdad66e925f3d52cece6c3e65a23eb2&v=4" width=115>  
+
 <sub>@jacksonn455</sub>
 
 ## ⚙️ Automatic Restart Configuration
