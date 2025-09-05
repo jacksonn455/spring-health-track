@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.exceptions;
+package com.springhealthtrack.api.core.exceptions;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

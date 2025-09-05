@@ -1,7 +1,7 @@
-package com.springhealthtrack.api.validations;
+package com.springhealthtrack.api.core.validations;
 
 import com.springhealthtrack.api.dtos.AppointmentDTO;
-import com.springhealthtrack.api.exceptions.ValidateException;
+import com.springhealthtrack.api.core.exceptions.ValidateException;
 import com.springhealthtrack.api.repositories.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -15,6 +15,8 @@ This API was built with a focus on clean architecture and modern software develo
     *   Isolation of business logic from the framework, following clean architecture principles.
     *   Application of **SOLID** principles for cleaner, more maintainable, and extensible code.
     *   API responses with **pagination** for optimized performance on large datasets.
+    *   Centralized and configurable **logging** using **SLF4J** for monitoring and debugging.
+    *   Asynchronous processing and communication with **Apache Kafka** for message queues.
 
 *   **Authentication & Security:**
     *   A dedicated login endpoint (`/login`) for user authentication.
@@ -42,6 +44,8 @@ This API was built with a focus on clean architecture and modern software develo
 *   **Security:** Spring Security, JWT (Json Web Token)
 *   **Validation:** Bean Validation (Jakarta Validation)
 *   **Utilities:** Lombok
+*   **Logging:** SLF4J
+*   **Messaging/Queue:** Apache Kafka
 
 ## How to Run the Project
 

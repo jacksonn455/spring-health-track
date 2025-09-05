@@ -48,8 +48,6 @@ class AppointmentControllerTest {
                 SpecialtyEnum.CARDIOLOGY
         );
 
-        when(appointmentService.createAppointment(request)).thenReturn(responseMock);
-
         ResponseEntity<?> response = appointmentController.createAppointment(request);
 
         assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();

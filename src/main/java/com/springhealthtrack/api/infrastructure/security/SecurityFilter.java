@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.security;
+package com.springhealthtrack.api.infrastructure.security;
 
 import com.springhealthtrack.api.repositories.UserRepository;
 import com.springhealthtrack.api.services.TokenService;

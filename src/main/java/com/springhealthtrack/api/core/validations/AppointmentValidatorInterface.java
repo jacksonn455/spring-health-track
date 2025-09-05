@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.validations;
+package com.springhealthtrack.api.core.validations;
 
 import com.springhealthtrack.api.dtos.AppointmentDTO;
 

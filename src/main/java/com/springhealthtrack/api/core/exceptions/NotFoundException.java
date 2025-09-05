@@ -1,4 +1,4 @@
-package com.springhealthtrack.api.exceptions;
+package com.springhealthtrack.api.core.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
