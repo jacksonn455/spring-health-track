@@ -28,13 +28,13 @@ This API was built with a focus on clean architecture and modern software develo
     *   Support for both **MySQL** and **PostgreSQL** databases.
     *   Automated database schema migration management with **Flyway**.
 
-  *   **Cache Management (Redis):**
-  * Integration with Redis to cache frequently accessed data and reduce database load.
-  * Cached data (like Doctors and Patients) has a TTL of 30 seconds, after which fresh data is fetched from the database.
+*   **Cache Management (Redis):**
+    *   Integration with **Redis** to cache frequently accessed data and reduce database load.
+    *   Cached data (like **Doctors** and **Patients**) has a **TTL of 30 seconds**, after which fresh data is fetched from the database.
 
 *   **Application Monitoring (New Relic):**
-  * Monitors application performance, request throughput, response times, and errors.
-  * Provides alerts and dashboards to track database queries and overall system health.
+    *   Monitors application performance, request throughput, response times, and errors.
+    *   Provides alerts and dashboards to track database queries and overall system health.
 
 *   **Documentation & Testing:**
     *   API documentation designed to follow the **OpenAPI** standard (ready for Swagger UI integration).
